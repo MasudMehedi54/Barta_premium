@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/surface" android:orientation="vertical">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent" android:layout_height="?attr/actionBarSize"
+        android:background="@color/surface"
+        app:title="Barta"
+        app:titleTextAppearance="@style/TextAppearance.Barta.ToolbarTitle"
+        app:titleTextColor="@color/barta_primary" />
+
+    <TextView
+        android:id="@+id/tvOffline"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:background="@color/offline_bar" android:gravity="center"
+        android:padding="6dp" android:textColor="@color/white" android:textSize="13sp"
+        android:text="Waiting for network. Showing saved chats."
+        android:visibility="gone" />
+
+    <FrameLayout
+        android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/pager"
+            android:layout_width="match_parent" android:layout_height="match_parent" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabNewChat"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end" android:layout_margin="16dp"
+            android:contentDescription="New chat"
+            android:src="@drawable/ic_new_chat"
+            app:backgroundTint="@color/barta_primary"
+            app:tint="@color/white" />
+    </FrameLayout>
+
+    <View
+        android:layout_width="match_parent" android:layout_height="1dp"
+        android:background="@color/divider" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:background="@color/surface"
+        app:itemIconTint="@color/text_primary"
+        app:itemTextColor="@color/text_primary"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/menu_bottom_nav" />
+</LinearLayout>

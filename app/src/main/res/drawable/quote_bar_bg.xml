@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Reply quote inside a bubble: brand bar on the left, soft background -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape><solid android:color="@color/quote_in_bubble" /><corners android:radius="6dp" /></shape>
+    </item>
+    <item android:width="4dp" android:gravity="start|fill_vertical">
+        <shape><solid android:color="@color/barta_primary" />
+            <corners android:topLeftRadius="6dp" android:bottomLeftRadius="6dp" /></shape>
+    </item>
+</layer-list>

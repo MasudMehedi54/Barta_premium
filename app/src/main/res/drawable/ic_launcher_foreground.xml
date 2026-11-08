@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- White capital "B", centred in the 108dp adaptive-icon canvas (inside the 66dp safe zone). -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp" android:height="108dp"
+    android:viewportWidth="108" android:viewportHeight="108">
+    <path android:fillColor="#FFFFFFFF" android:fillType="evenOdd"
+        android:pathData="M37,32 H55 C64,32 69,37 69,44 C69,48.5 66.5,52 62.5,53.6 C67.5,55 71,59 71,64.5 C71,72 65.5,76 56,76 H37 Z M45,39 V50 H54 C57.5,50 60,48 60,44.5 C60,41 57.5,39 54,39 Z M45,58 V69 H55 C59,69 62,67 62,63.5 C62,60 59,58 55,58 Z" />
+</vector>

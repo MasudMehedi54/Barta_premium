@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/chat_bg" android:orientation="vertical">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent" android:layout_height="?attr/actionBarSize"
+        android:background="@color/surface"
+        android:elevation="1dp"
+        app:contentInsetStartWithNavigation="0dp">
+
+        <!-- Tap the header to see contact / group info -->
+        <LinearLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent" android:layout_height="match_parent"
+            android:background="?attr/selectableItemBackground"
+            android:gravity="center_vertical" android:orientation="horizontal">
+            <com.barta.app.view.AvatarView
+                android:id="@+id/avatar"
+                android:layout_width="40dp" android:layout_height="40dp" />
+            <LinearLayout
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_marginStart="10dp" android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:ellipsize="end" android:maxLines="1"
+                    android:textColor="@color/text_primary" android:textSize="17sp"
+                    android:fontFamily="sans-serif-medium" />
+                <!-- "online", "typing...", "last seen today at ..." from the Realtime Database -->
+                <TextView
+                    android:id="@+id/tvSubtitle"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:ellipsize="end" android:maxLines="1"
+                    android:textColor="@color/text_muted" android:textSize="13sp"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </LinearLayout>
+    </com.google.android.material.appbar.MaterialToolbar>
+
+    <!-- In-chat search bar (searches the Room cache, works offline) -->
+    <LinearLayout
+        android:id="@+id/searchBar"
+        android:layout_width="match_parent" android:layout_height="52dp"
+        android:background="@color/surface" android:elevation="1dp"
+        android:gravity="center_vertical" android:orientation="horizontal"
+        android:paddingStart="12dp" android:paddingEnd="4dp"
+        android:visibility="gone">
+        <EditText
+            android:id="@+id/etSearch"
+            android:layout_width="0dp" android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/search_pill_bg"
+            android:hint="Search in this chat" android:importantForAutofill="no"
+            android:imeOptions="actionSearch" android:inputType="text"
+            android:paddingStart="14dp" android:paddingEnd="14dp"
+            android:textColor="@color/text_primary" android:textColorHint="@color/text_muted"
+            android:textSize="15sp" />
+        <TextView
+            android:id="@+id/tvSearchCount"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginStart="8dp" android:minWidth="36dp" android:gravity="center"
+            android:textColor="@color/text_muted" android:textSize="13sp" />
+        <ImageButton
+            android:id="@+id/btnSearchUp"
+            android:layout_width="40dp" android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Older match" android:src="@drawable/ic_arrow_up" />
+        <ImageButton
+            android:id="@+id/btnSearchDown"
+            android:layout_width="40dp" android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Newer match" android:src="@drawable/ic_arrow_down" />
+        <ImageButton
+            android:id="@+id/btnSearchClose"
+            android:layout_width="40dp" android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Close search" android:src="@drawable/ic_close" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvMessages"
+        android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1" android:clipToPadding="false"
+        android:paddingTop="8dp" android:paddingBottom="8dp" />
+
+    <!-- Shown instead of the input when one of you blocked the other -->
+    <TextView
+        android:id="@+id/tvBlocked"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:background="@color/surface"
+        android:gravity="center" android:padding="16dp"
+        android:textColor="@color/text_muted" android:textSize="14sp"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/inputArea"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Reply / edit preview above the input -->
+        <LinearLayout
+            android:id="@+id/replyBar"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginStart="6dp" android:layout_marginEnd="60dp"
+            android:background="@drawable/input_pill_bg" android:elevation="1dp"
+            android:gravity="center_vertical" android:orientation="horizontal"
+            android:padding="6dp" android:visibility="gone">
+            <LinearLayout
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/quote_bar_bg" android:orientation="vertical"
+                android:paddingStart="12dp" android:paddingTop="5dp"
+                android:paddingEnd="8dp" android:paddingBottom="5dp">
+                <TextView
+                    android:id="@+id/tvReplyTitle"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:textColor="@color/barta_primary" android:textSize="13sp"
+                    android:fontFamily="sans-serif-medium" />
+                <TextView
+                    android:id="@+id/tvReplyText"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:ellipsize="end" android:maxLines="2"
+                    android:textColor="@color/text_muted" android:textSize="13sp" />
+            </LinearLayout>
+            <ImageButton
+                android:id="@+id/btnReplyClose"
+                android:layout_width="36dp" android:layout_height="36dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Cancel" android:src="@drawable/ic_close" />
+        </LinearLayout>
+
+        <!-- WhatsApp-style input: pill + round send button (long-press send = schedule) -->
+        <LinearLayout
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:gravity="bottom" android:orientation="horizontal"
+            android:paddingStart="6dp" android:paddingTop="4dp"
+            android:paddingEnd="6dp" android:paddingBottom="6dp">
+
+            <LinearLayout
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/input_pill_bg" android:elevation="1dp"
+                android:gravity="center_vertical" android:minHeight="48dp"
+                android:orientation="horizontal" android:paddingStart="16dp" android:paddingEnd="4dp">
+                <EditText
+                    android:id="@+id/etMessage"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:background="@null"
+                    android:hint="Message" android:importantForAutofill="no"
+                    android:inputType="textMultiLine|textCapSentences"
+                    android:maxLines="5" android:paddingTop="10dp" android:paddingBottom="10dp"
+                    android:textColor="@color/text_primary" android:textColorHint="@color/text_muted"
+                    android:textSize="17sp" />
+                <ImageButton
+                    android:id="@+id/btnAttach"
+                    android:layout_width="44dp" android:layout_height="44dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Attach photo or location"
+                    android:src="@drawable/ic_attach" />
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/btnSend"
+                android:layout_width="48dp" android:layout_height="48dp"
+                android:layout_marginStart="6dp"
+                android:background="@drawable/send_button_bg" android:elevation="2dp"
+                android:contentDescription="Send. Long-press to schedule" android:paddingStart="3dp"
+                android:src="@drawable/ic_send" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

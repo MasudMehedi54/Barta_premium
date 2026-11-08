@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/surface">
+    <ImageView
+        android:layout_width="96dp" android:layout_height="96dp"
+        android:layout_gravity="center"
+        android:contentDescription="Barta logo" android:src="@drawable/ic_logo" />
+    <LinearLayout
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal" android:layout_marginBottom="48dp"
+        android:gravity="center_horizontal" android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Barta" android:textColor="@color/barta_primary"
+            android:textSize="22sp" android:textStyle="bold" />
+        <TextView
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Talk freely. Stay close." android:textColor="@color/text_muted"
+            android:textSize="13sp" />
+    </LinearLayout>
+</FrameLayout>

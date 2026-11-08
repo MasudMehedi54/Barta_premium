@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand: rgb(255, 0, 82) replaces WhatsApp green -->
+    <color name="barta_primary">#FF0052</color>
+    <color name="barta_dark">#C7003F</color>
+    <color name="barta_light">#FFE3EC</color>
+
+    <!-- App icon + logo background. Deliberately NOT in values-night, so the icon
+         looks the same in light and dark mode -->
+    <color name="launcher_background">#C7003F</color>
+
+    <!-- Always white (icons and text on the brand colour) -->
+    <color name="white">#FFFFFF</color>
+
+    <!-- Light theme neutrals. Dark versions live in values-night/colors.xml -->
+    <color name="surface">#FFFFFF</color>
+    <color name="surface_grey">#F0F2F5</color>
+    <color name="divider">#E9EDEF</color>
+    <color name="text_primary">#111B21</color>
+    <color name="text_muted">#667781</color>
+    <color name="chat_bg">#F4ECE6</color>
+    <color name="bubble_sent">#FFDCE7</color>
+    <color name="bubble_received">#FFFFFF</color>
+    <color name="quote_in_bubble">#14000000</color>
+    <color name="date_chip">#FFFFFF</color>
+    <color name="offline_bar">#54656F</color>
+    <color name="error_red">#D32F2F</color>
+    <color name="online_green">#22C55E</color>
+    <color name="read_tick">#FF0052</color>
+    <color name="flash_highlight">#40FF0052</color>
+    <color name="search_highlight">#FFF59D</color>
+    <!-- Call screen (same in light and dark mode) -->
+    <color name="call_bg">#0B141A</color>
+    <color name="call_red">#E53935</color>
+    <color name="call_green">#22C55E</color>
+    <color name="call_text_muted">#B3FFFFFF</color>
+</resources>

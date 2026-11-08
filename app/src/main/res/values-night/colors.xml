@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dark mode: Android picks these automatically when the night theme is on -->
+    <color name="barta_light">#4A0E24</color>
+    <color name="barta_dark">#FFB1C8</color>
+
+    <color name="surface">#111B21</color>
+    <color name="surface_grey">#202C33</color>
+    <color name="divider">#2A3942</color>
+    <color name="text_primary">#E9EDEF</color>
+    <color name="text_muted">#8696A0</color>
+    <color name="chat_bg">#0B141A</color>
+    <color name="bubble_sent">#5C1A33</color>
+    <color name="bubble_received">#202C33</color>
+    <color name="quote_in_bubble">#26FFFFFF</color>
+    <color name="date_chip">#182229</color>
+    <color name="offline_bar">#2A3942</color>
+    <color name="read_tick">#FF5C8D</color>
+    <color name="search_highlight">#806B5B00</color>
+</resources>

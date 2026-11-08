@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Contact / group info dialog -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:gravity="center_horizontal" android:orientation="vertical"
+    android:padding="24dp">
+    <com.barta.app.view.AvatarView
+        android:id="@+id/avatar"
+        android:layout_width="120dp" android:layout_height="120dp" />
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_marginTop="14dp" android:gravity="center"
+        android:textColor="@color/text_primary" android:textSize="22sp"
+        android:fontFamily="sans-serif-medium" />
+    <TextView
+        android:id="@+id/tvEmail"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_marginTop="2dp" android:gravity="center"
+        android:textColor="@color/text_muted" android:textSize="14sp" />
+    <TextView
+        android:id="@+id/tvPresence"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_marginTop="2dp" android:gravity="center"
+        android:textColor="@color/barta_primary" android:textSize="13sp" />
+    <TextView
+        android:id="@+id/tvAboutLabel"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="About" android:textColor="@color/text_muted" android:textSize="13sp" />
+    <TextView
+        android:id="@+id/tvAbout"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:textColor="@color/text_primary" android:textSize="16sp" />
+</LinearLayout>

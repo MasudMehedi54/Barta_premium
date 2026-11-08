@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- DayNight: follows the system or the choice made in "You > Theme" -->
+    <style name="Theme.Barta" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/barta_primary</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryContainer">@color/barta_light</item>
+        <item name="colorOnPrimaryContainer">@color/barta_dark</item>
+        <item name="colorSecondary">@color/barta_primary</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <!-- Selected chip + bottom-nav pill -->
+        <item name="colorSecondaryContainer">@color/barta_light</item>
+        <item name="colorOnSecondaryContainer">@color/barta_dark</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorSurfaceContainer">@color/surface</item>
+        <item name="colorSurfaceContainerLow">@color/surface</item>
+        <item name="colorSurfaceContainerHigh">@color/surface_grey</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="colorOnSurfaceVariant">@color/text_muted</item>
+        <item name="android:colorBackground">@color/surface</item>
+        <item name="android:windowBackground">@color/surface</item>
+        <!-- Status bar matches the toolbar; icons dark in light mode, light in dark mode -->
+        <item name="android:statusBarColor">@color/surface</item>
+        <item name="android:windowLightStatusBar">@bool/light_status_bar</item>
+    </style>
+
+    <style name="TextAppearance.Barta.ToolbarTitle" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- One row in a list of actions (long-press sheet, profile settings) -->
+    <style name="Barta.SheetRow" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">56dp</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:drawablePadding">24dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingStart">24dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="ShapeAppearance.Barta.Photo" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">6dp</item>
+    </style>
+</resources>

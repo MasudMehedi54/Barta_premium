@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/surface" android:orientation="vertical">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent" android:layout_height="?attr/actionBarSize"
+        android:background="@color/surface" android:elevation="1dp"
+        app:subtitle="Name the group and add members"
+        app:subtitleTextColor="@color/text_muted"
+        app:title="New group" app:titleTextColor="@color/text_primary" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_margin="16dp" android:hint="Group name"
+        app:boxCornerRadiusBottomEnd="12dp" app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp" app:boxCornerRadiusTopStart="12dp">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etGroupName"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:inputType="textCapWords" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_marginStart="20dp" android:layout_marginBottom="4dp"
+        android:text="Select at least 2 members" android:textColor="@color/text_muted" />
+
+    <FrameLayout
+        android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvUsers"
+            android:layout_width="match_parent" android:layout_height="match_parent"
+            android:clipToPadding="false" android:paddingBottom="88dp" />
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnCreate"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end" android:layout_margin="16dp"
+            android:contentDescription="Create group"
+            android:src="@drawable/ic_check_white"
+            app:backgroundTint="@color/barta_primary" app:tint="@color/white" />
+    </FrameLayout>
+</LinearLayout>

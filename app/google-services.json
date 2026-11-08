@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "903141731000",
+    "firebase_url": "https://project-barta-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "project-barta",
+    "storage_bucket": "project-barta.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:903141731000:android:0d13a790f48b55c090e24d",
+        "android_client_info": {
+          "package_name": "com.barta.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3zoed0OmrMjIQ2xbsLJA0ynpdGf7evN0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

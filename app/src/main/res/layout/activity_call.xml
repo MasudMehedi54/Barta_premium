@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Call screen: remote video full screen, my video small in the corner, buttons at the bottom -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/call_bg"
+    android:keepScreenOn="true">
+
+    <org.webrtc.SurfaceViewRenderer
+        android:id="@+id/remoteView"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <org.webrtc.SurfaceViewRenderer
+        android:id="@+id/localView"
+        android:layout_width="110dp" android:layout_height="160dp"
+        android:layout_gravity="top|end"
+        android:layout_marginTop="48dp" android:layout_marginEnd="16dp"
+        android:visibility="gone" />
+
+    <!-- Name, photo and status ("Calling...", "Ringing...", "02:31") -->
+    <LinearLayout
+        android:id="@+id/infoBox"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_marginTop="72dp"
+        android:gravity="center_horizontal" android:orientation="vertical">
+        <TextView
+            android:id="@+id/tvKind"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:drawablePadding="6dp"
+            android:textColor="@color/call_text_muted" android:textSize="14sp" />
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:ellipsize="end" android:maxLines="1"
+            android:paddingStart="24dp" android:paddingEnd="24dp"
+            android:shadowColor="#80000000" android:shadowRadius="6"
+            android:textColor="@color/white" android:textSize="28sp"
+            android:fontFamily="sans-serif-medium" />
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:shadowColor="#80000000" android:shadowRadius="6"
+            android:textColor="@color/call_text_muted" android:textSize="16sp" />
+        <com.barta.app.view.AvatarView
+            android:id="@+id/avatar"
+            android:layout_width="140dp" android:layout_height="140dp"
+            android:layout_marginTop="48dp" />
+    </LinearLayout>
+
+    <!-- Incoming call: Decline / Answer -->
+    <LinearLayout
+        android:id="@+id/incomingControls"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="72dp"
+        android:gravity="center" android:orientation="horizontal"
+        android:visibility="gone">
+        <LinearLayout
+            android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:gravity="center_horizontal"
+            android:orientation="vertical">
+            <ImageButton
+                android:id="@+id/btnDecline"
+                android:layout_width="72dp" android:layout_height="72dp"
+                android:background="@drawable/call_end_bg"
+                android:contentDescription="Decline" android:src="@drawable/ic_call_end" />
+            <TextView
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" android:text="Decline"
+                android:textColor="@color/white" android:textSize="14sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:gravity="center_horizontal"
+            android:orientation="vertical">
+            <ImageButton
+                android:id="@+id/btnAccept"
+                android:layout_width="72dp" android:layout_height="72dp"
+                android:background="@drawable/call_accept_bg"
+                android:contentDescription="Answer" android:src="@drawable/ic_call" />
+            <TextView
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" android:text="Answer"
+                android:textColor="@color/white" android:textSize="14sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- During the call: mute, speaker, camera on/off, flip camera, end -->
+    <LinearLayout
+        android:id="@+id/activeControls"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="48dp"
+        android:gravity="center" android:orientation="horizontal"
+        android:paddingStart="12dp" android:paddingEnd="12dp"
+        android:visibility="gone">
+        <ImageButton
+            android:id="@+id/btnSpeaker"
+            android:layout_width="56dp" android:layout_height="56dp"
+            android:layout_marginStart="8dp" android:layout_marginEnd="8dp"
+            android:background="@drawable/call_toggle_bg"
+            android:contentDescription="Speaker" android:src="@drawable/ic_volume_up" />
+        <ImageButton
+            android:id="@+id/btnCamera"
+            android:layout_width="56dp" android:layout_height="56dp"
+            android:layout_marginStart="8dp" android:layout_marginEnd="8dp"
+            android:background="@drawable/call_toggle_bg"
+            android:contentDescription="Turn camera off" android:src="@drawable/ic_videocam_off" />
+        <ImageButton
+            android:id="@+id/btnMute"
+            android:layout_width="56dp" android:layout_height="56dp"
+            android:layout_marginStart="8dp" android:layout_marginEnd="8dp"
+            android:background="@drawable/call_toggle_bg"
+            android:contentDescription="Mute" android:src="@drawable/ic_mic_off" />
+        <ImageButton
+            android:id="@+id/btnFlip"
+            android:layout_width="56dp" android:layout_height="56dp"
+            android:layout_marginStart="8dp" android:layout_marginEnd="8dp"
+            android:background="@drawable/call_toggle_bg"
+            android:contentDescription="Switch camera" android:src="@drawable/ic_flip_camera" />
+        <ImageButton
+            android:id="@+id/btnEnd"
+            android:layout_width="64dp" android:layout_height="64dp"
+            android:layout_marginStart="8dp" android:layout_marginEnd="8dp"
+            android:background="@drawable/call_end_bg"
+            android:contentDescription="End call" android:src="@drawable/ic_call_end" />
+    </LinearLayout>
+</FrameLayout>

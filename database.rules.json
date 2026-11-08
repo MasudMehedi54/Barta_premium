@@ -1,0 +1,50 @@
+{
+  "rules": {
+    "status": {
+      ".read": "auth != null",
+      "$uid": {
+        ".write": "auth != null && auth.uid === $uid",
+        ".validate": "newData.hasChildren(['online', 'lastSeen']) && newData.child('online').isBoolean() && newData.child('lastSeen').isNumber()"
+      }
+    },
+    "typing": {
+      "$chatId": {
+        ".read": "auth != null",
+        "$uid": {
+          ".write": "auth != null && auth.uid === $uid",
+          ".validate": "newData.isBoolean()"
+        }
+      }
+    },
+    "reads": {
+      "$chatId": {
+        ".read": "auth != null",
+        "$uid": {
+          ".write": "auth != null && auth.uid === $uid",
+          ".validate": "newData.isNumber()"
+        }
+      }
+    },
+    "userReads": {
+      "$uid": {
+        ".read": "auth != null && auth.uid === $uid",
+        "$chatId": {
+          ".write": "auth != null && auth.uid === $uid",
+          ".validate": "newData.isNumber()"
+        }
+      }
+    },
+    "calls": {
+      "$uid": {
+        ".read": "auth != null && auth.uid === $uid",
+        ".write": "auth != null && (auth.uid === $uid || (!data.exists() && newData.child('callerId').val() === auth.uid) || (data.child('callerId').val() === auth.uid && !newData.exists()))"
+      }
+    },
+    "callData": {
+      "$callId": {
+        ".read": "auth != null && (data.child('callerId').val() === auth.uid || data.child('calleeId').val() === auth.uid)",
+        ".write": "auth != null && (data.child('callerId').val() === auth.uid || data.child('calleeId').val() === auth.uid || (!data.exists() && newData.child('callerId').val() === auth.uid))"
+      }
+    }
+  }
+}
